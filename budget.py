@@ -48,12 +48,11 @@ class Category:
 
 
 def create_spend_chart(categories=[]):
-    bar_chart = "Percentage spent by category\n"
-    bar_chart += create_bars_chart(percentage_of_usage(categories))
+    header = "Percentage spent by category\n"
+    bar_chart = create_bars_chart(percentage_of_usage(categories))
     separation_line = "----------".rjust(14)
-    bar_chart += separation_line
-    bar_chart += write_Names(obtain_names(categories))
-    return bar_chart
+    write_names = write_Names(obtain_names(categories))
+    return (header + bar_chart + separation_line + write_names)
 
 
 def create_bars_chart(categories):
